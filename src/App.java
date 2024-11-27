@@ -1,4 +1,5 @@
 
+import Controllers.PersonaController;
 import Models.Persona;
 
 public class App {
@@ -39,22 +40,41 @@ public class App {
                 /// TODOS los métodos deben ser implementados en la clase PersonaController
                 // Crear una instancia de la clase PersonaController y llamar a los métodos
                 // NO usar metodos estaticos
+                PersonaController controlador = new PersonaController();
 
                 // 1 - Implementar un método para ordenar las personas por edad en orden
                 // desecendente tipo selección
+                controlador.seleccionEdad(personas);
+                System.out.println("\n---Lista de Personas Ordenadas de forma desecendente por Edad---");
+                for (Persona persona : personas) {
+                        System.out.println(persona);
+                }
 
                 // 1.2 - Buscar a la persona con las sigueintes edaddes en el arreglo de
                 // personas ya ordenarod por edad
                 // - 25
                 // - 70
+                System.out.println("\nBusqueda Binaria:  ");
+                controlador.busquedaBinariaEdad(personas, 25);
+                System.out.println("\nBusqueda Binaria:  ");
+                controlador.busquedaBinariaEdad(personas, 70);
 
                 // 2 - Implementar un método para ordenar las personas por su nombre en orden
                 // ascendente tipo inserción
+                controlador.seleccionNombre(personas);
+                System.out.println("\n---Lista de Personas Ordenadas de forma ascendente por Nombre---");
+                for (Persona persona : personas) {
+                        System.out.println(persona);
+                }
 
                 // 2.2 - Buscar a la persona con los sigueintes nombres en el arreglo de
                 // personas ya ordenarod por nombre
                 // - "Anais"
                 // - "Miguel"
+                System.out.println("\nBusqueda Binaria:  ");
+                controlador.busquedaBinariaNombre(personas, "Anais");
+                System.out.println("\nBusqueda Binaria:  ");
+                controlador.busquedaBinariaNombre(personas, "Miguel");
 
                 // Imprimir:
                 // el arreglo ordenado para cada punto 1 y 2
